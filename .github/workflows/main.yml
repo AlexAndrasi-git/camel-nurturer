@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      TEVE_USERNAME: ${{ secrets.TEVECLUB_USERNAME }}
-      TEVE_PASSWORD: ${{ secrets.TEVECLUB_PASSWORD }}
+      TEVECLUB_USERNAME: ${{ secrets.TEVECLUB_USERNAME }}
+      TEVECLUB_PASSWORD: ${{ secrets.TEVECLUB_PASSWORD }}
 
     steps:
       - name: Checkout repository
