@@ -9,7 +9,7 @@ import os
 @pytest.fixture
 def browser_setup():
     with sync_playwright() as playwright:
-        browser = playwright.chromium.launch(headless=False)
+        browser = playwright.chromium.launch(headless=True)
         context = browser.new_context()
         page = context.new_page()
 
@@ -33,3 +33,4 @@ def test_feeding_and_teaching_teve(browser_setup):
 
     tevePage = TeveclubTevePage(browser_setup.page)
     tevePage.test_give_food_and_drink_to_teve()
+    tevePage.test_teach_trick_to_teve()
