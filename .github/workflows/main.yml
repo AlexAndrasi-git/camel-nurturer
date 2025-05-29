@@ -28,6 +28,9 @@ jobs:
           pip install -r requirements.txt
           playwright install --with-deps
 
+      - name: Set PYTHONPATH
+        run: echo "PYTHONPATH=$PWD" >> $GITHUB_ENV
+
       - name: Run API and UI Tests with HTML report
         run: |
           pytest tests/test_ui.py --html=report.html --self-contained-html
