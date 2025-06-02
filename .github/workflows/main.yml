@@ -33,7 +33,7 @@ jobs:
 
       - name: Run API and UI Tests with HTML report
         run: |
-          pytest tests/test_ui.py --html=report.html --self-contained-html
+          pytest tests/test_ui.py -v --html=report.html --self-contained-html
 
       - name: Upload HTML Report as Artifact
         uses: actions/upload-artifact@v4
