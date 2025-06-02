@@ -2,7 +2,7 @@ name: Daily TeveClub e2e UI Test
 
 on:
   schedule:
-    - cron: '0 11 * * *'  # 12:00 CET == 11:00 UTC
+    - cron: '0 9 * * *'  # Execution triggered at 11:00AM
   workflow_dispatch:  # Allow manual triggering
 
 jobs:
@@ -33,7 +33,7 @@ jobs:
 
       - name: Run API and UI Tests with HTML report
         run: |
-          pytest tests/test_ui.py --html=report.html --self-contained-html
+          pytest tests/test_ui.py -v --html=report.html --self-contained-html
 
       - name: Upload HTML Report as Artifact
         uses: actions/upload-artifact@v4
