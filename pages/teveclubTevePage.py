@@ -1,3 +1,5 @@
+import time
+
 from playwright.sync_api import Page, Locator
 
 
@@ -13,9 +15,12 @@ class TeveclubTevePage:
         self.teachTrickToTeveImg = self.page.locator("img[alt='Tanítom a tevémet!']")
         self.triggerTrickLearningInput = self.page.locator("input[name='learn']")
         self.currentlyLearnedTrickDiv = self.page.locator("div[align='justify']")
+        self.backToLoginScreenImg = self.page.locator("img[src='/images/vissza.gif']")
 
     def test_give_food_and_drink_to_teve(self):
         print("test_give_food_and_drink_to_teve starts now")
+        time.sleep(3)
+        self.backToLoginScreenImg.evaluate("window.scrollBy(0, 1000)")
         if self.giveFoodAndDrinkInput.is_visible():
             self.numberOfFoodSelect.scroll_into_view_if_needed()
             self.numberOfFoodSelect.click()
