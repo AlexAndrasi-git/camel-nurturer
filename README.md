@@ -13,3 +13,5 @@ Requirements
 - Playwright library 
 - Pytest library
 - Requests library 
+
+The Teve will be taken care of automatically every day, without manual intervention.
