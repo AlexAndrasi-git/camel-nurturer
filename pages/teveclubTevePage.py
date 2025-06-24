@@ -47,9 +47,8 @@ class TeveclubTevePage:
         currently_learner_trick_status = self.currentlyLearnedTrickDiv.inner_text()
         lines = [line.strip() for line in currently_learner_trick_status.splitlines()]
         for line in lines:
-            if line.startswith("A tevéd jelenleg"):
+            if line.startswith("A tevéd jelenleg") or line.startswith("Ma már tanítottad a tevédet"):
                 current_trick_status = line
                 break
         print(f"Currently learned trick status: {current_trick_status}")
-
         print(f"test_teach_trick_to_teve ends now")
